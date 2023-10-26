@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="./src/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Weather Forecast Dashboard</title>
+  </head>
+  <body>
+    <div class="loader-container">
+      <div class="loader"></div>
+    </div>
+    <div class="container">
+      <h1 class="title">Today's Weather</h1>
+      <div class="general-info">
+        <div>
+          <div class="card temperature-card">
+            <div class="temperature-card-content">
+              <img id="weatherIcon" />
+              <h1><scan id="temp"></scan><span>&#8451;</span></h1>
+              <h3><scan id="cityNameDate"></scan></h3>
+              <p class="small-text">
+                <i>Updated on <scan id="datetime"></scan></i>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="details">
+          <div class="card indicator">
+            <img src="src/css/assets/animated/humidity.svg" class="icon" />
+            <div>
+              <p class="small-text">Humidity</p>
+              <scan id="humi" class="details-measurement"></scan>
+            </div>
+          </div>
+          <div class="card indicator">
+            <img
+              src="src/css/assets/animated/wind-speed.svg"
+              class="icon" />
+            <div>
+              <p class="small-text">Wind</p>
+              <scan id="wind" class="details-measurement"></scan>
+            </div>
+          </div>
+          <div class="card indicator">
+            <img src="src/css/assets/animated/pressure.svg" class="icon" />
+            <div>
+              <p class="small-text">UV Index</p>
+              <scan id="uv" class="details-measurement"></scan>
+            </div>
+          </div>
+          <div class="card indicator">
+            <img src="src/css/assets/animated/sunrise.svg" class="icon" />
+            <div>
+              <p class="small-text">Sunrise & Sunset</p>
+              <scan id="sunRise" class="details-measurement-small"></scan>
+              <scan id="sunSet" class="details-measurement-small"></scan>
+            </div>
+          </div>
+        </div>
+        <div class="search-city">
+          <div class="search-box card">
+            <input type="text" id="searchCity" placeholder="Write City Name" />
+            <button id="searchButton"><i class="fa fa-search"></i></button>
+          </div>
+          <div class="search-recommend card">
+            <ul id="cityRecommend" class="search-recommend card"></ul>
+          </div>
+        </div>
+      </div>
+      <h3 class="subtitle">Weather Forecast</h3>
+      <div id="dailyForecast" class="day-forecast"></div>
+    </div>
+    <script type="module" src="./dist/bundle.js"></script>
+  </body>
+</html>
